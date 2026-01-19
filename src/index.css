@@ -6,3 +6,8 @@
   --color-green:#54BD95;
   --color-text-gray:#A6A6A6;
 }
+@layer base{
+  button{
+    @apply cursor-pointer 
+  }
+}
