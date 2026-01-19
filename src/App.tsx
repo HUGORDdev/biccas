@@ -7,7 +7,6 @@ import Logo from './components/layout/Logo'
 import Navbar from './components/layout/Navbar'
 import Price from './components/layout/Price'
 import Product from './components/layout/Product'
-
 const App = () => {
   return (
     <div className='min-h-screen font-inter text-[#191A15] bg-linear-to-r from-green/30 to-[#FFD6D6]/30 overflow-hidden  '>
@@ -20,7 +19,7 @@ const App = () => {
         <How />
       </section>
       <section id="product">
-        <Product />
+        <Product/>
       </section>
       <section id="benefit">
         <Benefit />
