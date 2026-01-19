@@ -1,64 +1,84 @@
-import React from 'react'
+import { motion } from 'framer-motion'
 import Start from '../common/Start'
+import { ServiceItem } from '../common/ServiceItem';
 
 const How = () => {
+    
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    };
+
+    const staggerContainer = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.2 }
+        }
+    };
+
     return (
-        <div className='flex justify-center mt-20 bg-[#F9F8FE] py-15 px-10'>
-            <div className='flex w-1/2 flex-col gap-10'>
-                <p className='font-semibold text-[50px] w-154'>How we support our pratner all over the world</p>
-                <p className='font-medium leading-[1.3] w-161 text-text-gray'>SaaS become a common delivery model for many business application, including office software, messaging software, payroll processing software, DBMS software, management software</p>
-                <div className="flex items-start gap-20">
-                    <div className='flex flex-col gap-4.5 justify-start'>
+        <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start mt-10 md:mt-20 bg-[#F9F8FE] py-16 px-6 md:px-20 gap-16'>
+
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+                className='flex w-full lg:w-1/2 flex-col gap-8 text-center lg:text-left'
+            >
+                <motion.p variants={fadeInUp} className='font-semibold text-3xl md:text-[50px] leading-tight max-w-xl mx-auto lg:mx-0'>
+                    How we support our partner all over the world
+                </motion.p>
+
+                <motion.p variants={fadeInUp} className='font-medium leading-[1.6] max-w-2xl text-text-gray text-base md:text-lg'>
+                    SaaS become a common delivery model for many business application, including office software, messaging software, payroll processing software, DBMS software, management software.
+                </motion.p>
+
+                <motion.div variants={fadeInUp} className="flex flex-wrap justify-center lg:justify-start items-start gap-10 md:gap-20 mt-4">
+                    <div className='flex flex-col gap-3 items-center lg:items-start'>
                         <Start number={5} />
                         <p className='font-bold text-lg'>
-                            4.9 <span className='font-medium text-lg'> /5 rating</span>
+                            4.9 <span className='font-medium text-lg text-gray-500'> /5 rating</span>
                         </p>
-                        <span className='font-bold text-lg text-text-gray'>databricks</span>
+                        <span className='font-bold text-lg text-text-gray uppercase tracking-wider'>databricks</span>
                     </div>
-                    <div className='flex flex-col gap-4.5 justify-start'>
+                    <div className='flex flex-col gap-3 items-center lg:items-start'>
                         <Start number={4} />
                         <p className='font-bold text-lg'>
-                            4.8 <span className='font-medium text-lg'> /5 rating</span>
+                            4.8 <span className='font-medium text-lg text-gray-500'> /5 rating</span>
                         </p>
-                        <span className='font-bold text-lg text-text-gray'>Chainalysis</span>
+                        <span className='font-bold text-lg text-text-gray uppercase tracking-wider'>Chainalysis</span>
                     </div>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
 
-            <div className='flex flex-col justify-between'>
-                <div className='flex gap-2 items-start'>
-                    <div className='w-13 h-10 rounded-sm  items-center justify-center flex  bg-white shadow-2xl '>
-                        <img src="./publishing.svg" className='' />
-                    </div>
-                    <div >
-                        <p className='font-bold text-[28px]'>Publishing</p>
-                        <p className='font-medium text-lg leading-[1.30] text-text-gray w-107'> Plan, collaborate, and publishing your contetn that drivees meaningful engagement and growth for your barnd</p>
-                    </div>
-
-                </div>
-                <div className='flex gap-2 items-start'>
-                    <div className='w-10 h-10 rounded-sm  items-center justify-center flex bg-white shadow-2xl '>
-                        <img src="./analytics.svg" className='' />
-                    </div>
-                    <div>
-                        <p className='font-bold text-[28px]'>Analytics</p>
-                        <p className='font-medium text-lg leading-[1.30] text-text-gray w-107'>Analyze your performance and create goegeous report</p>
-                    </div>
-
-                </div>
-                <div className='flex gap-2 items-start'>
-                    <div className='w-10 h-10 rounded-sm  items-center justify-center flex bg-white shadow-2xl '>
-                        <img src="./publishing.svg" className='' />
-                    </div>
-                    <div>
-                        <p className='font-bold text-[28px]'>Engagement</p>
-                        <p className='font-medium text-lg leading-[1.30] text-text-gray w-107'>Quiuckly navigate you anda engage with your adience</p>
-                    </div>
-
-                </div>
-            </div>
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+                className='flex w-full lg:w-1/2 flex-col gap-10'
+            >
+                <ServiceItem
+                    icon="./publishing.svg"
+                    title="Publishing"
+                    desc="Plan, collaborate, and publishing your content that drives meaningful engagement and growth for your brand."
+                />
+                <ServiceItem
+                    icon="./analytics.svg"
+                    title="Analytics"
+                    desc="Analyze your performance and create gorgeous reports to understand your data better."
+                />
+                <ServiceItem
+                    icon="./publishing.svg"
+                    title="Engagement"
+                    desc="Quickly navigate you and engage with your audience effectively across all platforms."
+                />
+            </motion.div>
         </div>
     )
 }
+
 
 export default How
