@@ -1,7 +1,7 @@
 import { ChatIcon } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
 
-// On définit un type pour nos éléments pour être propre en TS
+// type
 type FloatingItemProps = {
   children: React.ReactNode;
   className: string;
@@ -13,7 +13,7 @@ const FloatingItem = ({ children, className, delay = 0 }: FloatingItemProps) => 
     initial={{ opacity: 0, y: 20 }}
     animate={{
       opacity: 1,
-      y: [0, -10, 0], // Petit mouvement de haut en bas (flottement)
+      y: [0, -10, 0], // Petit mouvement de haut en bas 
     }}
     transition={{
       initial: { duration: 0.5, delay },
@@ -21,7 +21,7 @@ const FloatingItem = ({ children, className, delay = 0 }: FloatingItemProps) => 
         duration: 3,
         repeat: Infinity,
         ease: "easeInOut",
-        delay: delay // On décale les animations pour que ce soit naturel
+        delay: delay // le delay pour chaque element de facon personnaliser
       }
     }}
     className={`absolute z-10 ${className}`}
@@ -33,7 +33,7 @@ const FloatingItem = ({ children, className, delay = 0 }: FloatingItemProps) => 
 export const HeroVisual = () => {
   return (
     <div className="relative w-full max-w-lg mx-auto">
-      {/* L'image principale (le personnage) */}
+      {/* L'image principale  */}
       <div className="relative z-0 rounded-3xl overflow-hidden ">
         <img src="/human.png" alt="Productivity" className="w-full  h-auto object-cover" />
       </div>
@@ -73,8 +73,6 @@ export const HeroVisual = () => {
       <FloatingItem className="top-10 -right-8 " delay={0.8}>
         <img src="./dataBase.svg" className=' w-25 h-25' />
       </FloatingItem>
-
-                    {/* <img src="./amout.png" className='  h-[10%] left-20 bottom-10 '  /> */}
     </div>
   );
 };
