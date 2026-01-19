@@ -12,8 +12,8 @@ const Navbar = () => {
             <li className="font-medium font-inter text-[16px] text-text-gray hover:text-black no-underline " ><a href="#">About Us</a></li>
         </ul>
         <div className="flex gap-3">
-            <button onClick={()=>setLogin(true)} className={`${Login?" bg-green text-white":"border border-green"}  rounded-xl cursor-pointer w-20 h-10 `} >Login</button>
-            <button className={`${Login?"border border-green":" bg-green text-white"} w-20 h-10 rounded-xl cursor-pointer `} onClick={()=>setLogin(false)} >Sign UP</button>
+            <button onClick={()=>setLogin(true)} className={`${Login?" bg-green text-white":"border border-green/80"}  rounded-xl cursor-pointer w-20 h-10 `} >Login</button>
+            <button className={`${Login?"border border-green/80":" bg-green text-white"} w-20 h-10 rounded-xl cursor-pointer `} onClick={()=>setLogin(false)} >Sign UP</button>
         </div>
     </nav>
   )

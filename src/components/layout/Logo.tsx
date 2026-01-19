@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Logo = () => {
   return (
     <div className='mt-20 mx-20 flex flex-col gap-15 items-center'>
