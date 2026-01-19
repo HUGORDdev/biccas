@@ -5,19 +5,27 @@ const Navbar = () => {
     const [login, setLogin] = useState(true)
     const [isOpen, setIsOpen] = useState(false) 
 
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+        }
+        setIsOpen(false)
+    }
+
     return (
         <nav className="relative flex justify-between items-center mx-6 md:mx-20 mt-5">
             {/* Logo */}
-            <span className="font-inter text-[30px] md:text-[50px] text-green font-semibold">
+            <span className="font-inter text-[30px] md:text-[50px] text-green font-semibold cursor-pointer" onClick={() => scrollToSection('home')}>
                 Biccas
             </span>
 
             {/* Menu Desktop  */}
             <ul className="hidden lg:flex gap-10">
-                <li className="font-medium text-text-gray hover:text-black"><a href="#">Home</a></li>
-                <li className="font-medium text-text-gray hover:text-black"><a href="#">Product</a></li>
-                <li className="font-medium text-text-gray hover:text-black"><a href="#">Blog</a></li>
-                <li className="font-medium text-text-gray hover:text-black"><a href="#">About Us</a></li>
+                <li className="font-medium text-text-gray hover:text-black cursor-pointer" onClick={() => scrollToSection('home')}>Home</li>
+                <li className="font-medium text-text-gray hover:text-black cursor-pointer" onClick={() => scrollToSection('product')}>Product</li>
+                <li className="font-medium text-text-gray hover:text-black cursor-pointer" onClick={() => scrollToSection('benefit')}>Blog</li>
+                <li className="font-medium text-text-gray hover:text-black cursor-pointer" onClick={() => scrollToSection('about')}>About Us</li>
             </ul>
 
             {/* Boutons Desktop  */}
@@ -44,10 +52,10 @@ const Navbar = () => {
             {isOpen && (
                 <div className="absolute top-full left-0 w-full bg-white shadow-xl flex flex-col p-6 gap-6 z-50 lg:hidden rounded-2xl mt-4">
                     <ul className="flex flex-col gap-4 text-center">
-                        <li><a href="#" className="font-medium" onClick={() => setIsOpen(false)}>Home</a></li>
-                        <li><a href="#" className="font-medium" onClick={() => setIsOpen(false)}>Product</a></li>
-                        <li><a href="#" className="font-medium" onClick={() => setIsOpen(false)}>Blog</a></li>
-                        <li><a href="#" className="font-medium" onClick={() => setIsOpen(false)}>About Us</a></li>
+                        <li className="cursor-pointer font-medium" onClick={() => scrollToSection('home')}>Home</li>
+                        <li className="cursor-pointer font-medium" onClick={() => scrollToSection('product')}>Product</li>
+                        <li className="cursor-pointer font-medium" onClick={() => scrollToSection('benefit')}>Blog</li>
+                        <li className="cursor-pointer font-medium" onClick={() => scrollToSection('about')}>About Us</li>
                     </ul>
                     <div className="flex flex-col gap-3">
                         <button className="w-full py-3 bg-green text-white rounded-xl">Login</button>

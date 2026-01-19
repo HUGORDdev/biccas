@@ -12,13 +12,25 @@ const App = () => {
   return (
     <div className='min-h-screen font-inter text-[#191A15] bg-linear-to-r from-green/30 to-[#FFD6D6]/30 overflow-hidden  '>
       <Navbar />
-      <Hero />
+      <section id="home">
+        <Hero />
+      </section>
       <Logo />
-      <How />
-      <Product />
-      <Benefit />
-      <Price />
-      <FooterSection/>
+      <section id="how">
+        <How />
+      </section>
+      <section id="product">
+        <Product />
+      </section>
+      <section id="benefit">
+        <Benefit />
+      </section>
+      <section id="price">
+        <Price />
+      </section>
+      <section id="about">
+        <FooterSection/>
+      </section>
 
     </div>
   )
