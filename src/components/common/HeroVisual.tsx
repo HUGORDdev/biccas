@@ -2,13 +2,13 @@ import { ChatIcon } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
 
 // type
-type FloatingItemProps = {
+export type FloatingItemProps = {
   children: React.ReactNode;
   className: string;
   delay?: number;
 };
 
-const FloatingItem = ({ children, className, delay = 0 }: FloatingItemProps) => (
+export  const FloatingItem = ({ children, className, delay = 0 }: FloatingItemProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{

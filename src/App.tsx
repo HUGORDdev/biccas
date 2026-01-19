@@ -1,4 +1,5 @@
 
+import Benefit from './components/layout/Benefit'
 import Hero from './components/layout/Hero'
 import How from './components/layout/How'
 import Logo from './components/layout/Logo'
@@ -13,6 +14,7 @@ const App = () => {
       <Logo/>
       <How/>
       <Product/>
+      <Benefit/>
     </div>
   )
 }
