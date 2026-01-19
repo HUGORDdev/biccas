@@ -2,7 +2,7 @@ import  { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 
 const AnimatedUnderline = () => {
-  const pathRef = useRef(null);
+  const pathRef = useRef<SVGPathElement>(null);
 
   useEffect(() => {
     if (pathRef.current) {

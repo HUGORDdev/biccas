@@ -16,7 +16,7 @@ export  const FloatingItem = ({ children, className, delay = 0 }: FloatingItemPr
       y: [0, -10, 0], // Petit mouvement de haut en bas 
     }}
     transition={{
-      initial: { duration: 0.5, delay },
+      opacity: { duration: 0.5, delay },
       y: {
         duration: 3,
         repeat: Infinity,
